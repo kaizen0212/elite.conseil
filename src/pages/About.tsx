@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Award, Target, Heart, Users, BookOpen, TrendingUp } from "lucide-react";
 import { useEffect, useRef } from "react";
+import coachPortrait2 from "@/assets/coach-portrait-2.png";
 
 const values = [
   {
@@ -80,13 +81,23 @@ const About = () => {
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 {/* Image */}
                 <div className="reveal opacity-0 relative order-2 lg:order-1">
-                  <div className="aspect-[3/4] relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-sm" />
-                    <div className="absolute inset-4 border border-primary/30 rounded-sm" />
-                    <div className="absolute inset-8 bg-muted rounded-sm overflow-hidden">
-                      <div className="w-full h-full bg-gradient-to-br from-anthracite to-background flex items-center justify-center">
-                        <span className="font-serif text-8xl text-primary/30">EC</span>
-                      </div>
+                  <div className="aspect-[3/4] relative max-w-md mx-auto">
+                    {/* Decorative frame */}
+                    <div className="absolute -inset-4 border border-primary/20 rounded-sm" />
+                    <div className="absolute -inset-8 border border-primary/10 rounded-sm hidden lg:block" />
+                    
+                    {/* Gold accent corner */}
+                    <div className="absolute -top-2 -right-2 w-16 h-16 border-t-2 border-r-2 border-primary" />
+                    <div className="absolute -bottom-2 -left-2 w-16 h-16 border-b-2 border-l-2 border-primary" />
+                    
+                    {/* Main Photo */}
+                    <div className="relative h-full overflow-hidden rounded-sm">
+                      <img 
+                        src={coachPortrait2}
+                        alt="Experte en accompagnement entrepreneurial"
+                        className="w-full h-full object-cover object-top"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
                     </div>
                   </div>
                 </div>
