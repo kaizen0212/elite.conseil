@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Award, Target, Heart } from "lucide-react";
 import { useEffect, useRef } from "react";
+import coachOffice from "@/assets/coach-office.png";
 
 const AboutPreview = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -33,10 +34,12 @@ const AboutPreview = () => {
             <div className="aspect-[4/5] relative">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-sm" />
               <div className="absolute inset-4 border border-primary/30 rounded-sm" />
-              <div className="absolute inset-8 bg-muted rounded-sm overflow-hidden">
-                <div className="w-full h-full bg-gradient-to-br from-anthracite to-background flex items-center justify-center">
-                  <span className="font-serif text-6xl text-primary/30">EC</span>
-                </div>
+              <div className="absolute inset-8 rounded-sm overflow-hidden">
+                <img 
+                  src={coachOffice}
+                  alt="Accompagnatrice en session de travail"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             {/* Floating Badge */}
