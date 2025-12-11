@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const contactInfo = [
   {
@@ -62,25 +63,47 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: `${formData.get("firstName")} ${formData.get("lastName")}`.trim(),
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      subject: formData.get("subject") as string,
+      message: formData.get("message") as string,
+    };
 
-    toast({
-      title: "Message envoyé !",
-      description: "Nous vous répondrons dans les plus brefs délais.",
-    });
+    try {
+      const { data: response, error } = await supabase.functions.invoke("send-contact", {
+        body: data,
+      });
 
-    setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+      if (error) throw error;
+
+      toast({
+        title: "Message envoyé !",
+        description: "Nous vous répondrons dans les plus brefs délais.",
+      });
+
+      (e.target as HTMLFormElement).reset();
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <>
       <Helmet>
-        <title>Contact | Élite Conseil - Réservez votre Consultation</title>
+        <title>Contact | Élite Conseil - Accompagnement Auto-Entrepreneurs BTP</title>
         <meta
           name="description"
-          content="Contactez-nous pour réserver votre consultation gratuite. Accompagnement premium pour la création de votre entreprise."
+          content="Contactez-nous pour votre accompagnement auto-entrepreneur dans le BTP : peinture, rénovation, électricité, plomberie, multi-services, sécurité."
         />
       </Helmet>
 
@@ -95,12 +118,12 @@ const Contact = () => {
                 Contact
               </span>
               <h1 className="reveal opacity-0 font-serif text-4xl md:text-5xl lg:text-6xl font-medium mt-4 mb-6" style={{ animationDelay: "0.1s" }}>
-                Parlons de votre{" "}
-                <span className="text-gradient-gold">projet</span>
+                Lancez votre activité{" "}
+                <span className="text-gradient-gold">BTP</span>
               </h1>
               <p className="reveal opacity-0 text-muted-foreground text-lg max-w-2xl mx-auto" style={{ animationDelay: "0.2s" }}>
-                Réservez votre consultation découverte gratuite et faisons connaissance. 
-                Première réponse garantie sous 24 heures.
+                Peinture, rénovation, électricité, plomberie, multi-services ou sécurité — 
+                bénéficiez d'un accompagnement expert pour créer votre auto-entreprise.
               </p>
             </div>
           </section>
@@ -126,6 +149,7 @@ const Contact = () => {
                             id="firstName"
                             name="firstName"
                             required
+                            maxLength={50}
                             placeholder="Votre prénom"
                             className="bg-background border-border focus:border-primary"
                           />
@@ -138,6 +162,7 @@ const Contact = () => {
                             id="lastName"
                             name="lastName"
                             required
+                            maxLength={50}
                             placeholder="Votre nom"
                             className="bg-background border-border focus:border-primary"
                           />
@@ -153,6 +178,7 @@ const Contact = () => {
                           name="email"
                           type="email"
                           required
+                          maxLength={255}
                           placeholder="votre@email.com"
                           className="bg-background border-border focus:border-primary"
                         />
@@ -166,6 +192,7 @@ const Contact = () => {
                           id="phone"
                           name="phone"
                           type="tel"
+                          maxLength={20}
                           placeholder="+33 6 00 00 00 00"
                           className="bg-background border-border focus:border-primary"
                         />
@@ -173,13 +200,14 @@ const Contact = () => {
 
                       <div className="space-y-2">
                         <label htmlFor="subject" className="text-sm font-medium text-muted-foreground">
-                          Objet *
+                          Votre métier / Activité *
                         </label>
                         <Input
                           id="subject"
                           name="subject"
                           required
-                          placeholder="Comment pouvons-nous vous aider ?"
+                          maxLength={200}
+                          placeholder="Ex: Peinture, Électricité, Multi-services..."
                           className="bg-background border-border focus:border-primary"
                         />
                       </div>
@@ -192,7 +220,8 @@ const Contact = () => {
                           id="message"
                           name="message"
                           required
-                          placeholder="Décrivez votre projet..."
+                          maxLength={2000}
+                          placeholder="Décrivez votre projet d'auto-entreprise..."
                           rows={5}
                           className="bg-background border-border focus:border-primary resize-none"
                         />
@@ -222,8 +251,8 @@ const Contact = () => {
                       Informations de contact
                     </h2>
                     <p className="text-muted-foreground leading-relaxed mb-8">
-                      N'hésitez pas à nous contacter par le moyen qui vous convient le mieux. 
-                      Nous nous engageons à vous répondre dans les 24 heures ouvrées.
+                      Spécialiste de l'accompagnement des auto-entrepreneurs dans le BTP et les services techniques. 
+                      Réponse garantie sous 24 heures.
                     </p>
                   </div>
 

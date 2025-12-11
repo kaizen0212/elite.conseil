@@ -1,32 +1,44 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, FileText, Users, ClipboardCheck, Compass } from "lucide-react";
+import { ArrowRight, Paintbrush, Wrench, Zap, Droplets, Settings, Shield } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const services = [
   {
-    icon: FileText,
-    title: "Business Plan",
+    icon: Paintbrush,
+    title: "Peinture",
     description:
-      "Élaboration d'un business plan professionnel et percutant pour convaincre investisseurs et partenaires.",
+      "Accompagnement complet pour créer votre auto-entreprise de peinture en bâtiment.",
   },
   {
-    icon: Users,
-    title: "Coaching Création",
+    icon: Wrench,
+    title: "Rénovation",
     description:
-      "Un accompagnement personnalisé à chaque étape de la création de votre entreprise.",
+      "Lancez votre activité de rénovation intérieure et extérieure avec un cadre solide.",
   },
   {
-    icon: ClipboardCheck,
-    title: "Accompagnement Administratif",
+    icon: Zap,
+    title: "Électricité",
     description:
-      "Gestion des formalités administratives et juridiques pour une création sereine.",
+      "Créez votre micro-entreprise d'électricien avec toutes les formalités maîtrisées.",
   },
   {
-    icon: Compass,
-    title: "Mentorat Stratégique",
+    icon: Droplets,
+    title: "Plomberie",
     description:
-      "Conseils stratégiques et mentorat pour accélérer le développement de votre activité.",
+      "Démarrez votre activité de plombier indépendant avec un accompagnement expert.",
+  },
+  {
+    icon: Settings,
+    title: "Multi-Services",
+    description:
+      "Polyvalent ? Créez votre structure multi-services pour diversifier vos prestations.",
+  },
+  {
+    icon: Shield,
+    title: "Sécurité",
+    description:
+      "Lancez votre entreprise dans le secteur de la sécurité privée avec les bonnes bases.",
   },
 ];
 
@@ -57,26 +69,26 @@ const ServicesSection = () => {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="reveal opacity-0 text-primary text-sm font-medium tracking-widest uppercase">
-            Services
+            Secteurs d'activité
           </span>
           <h2 className="reveal opacity-0 font-serif text-3xl md:text-4xl lg:text-5xl font-medium mt-4" style={{ animationDelay: "0.1s" }}>
-            Un accompagnement{" "}
-            <span className="text-gradient-gold">complet</span>
+            BTP &{" "}
+            <span className="text-gradient-gold">Services Techniques</span>
           </h2>
           <p className="reveal opacity-0 text-muted-foreground mt-6" style={{ animationDelay: "0.2s" }}>
-            Des services sur-mesure adaptés à chaque étape de votre parcours entrepreneurial.
+            Un accompagnement sur-mesure pour chaque métier du bâtiment et des services techniques.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
               className="reveal opacity-0 card-premium group p-8 lg:p-10"
               style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
-              <div className="flex items-start space-x-6">
+              <div className="flex flex-col items-center text-center space-y-4">
                 <div className="flex-shrink-0 w-14 h-14 rounded-sm bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
                   <service.icon size={28} className="text-primary" />
                 </div>
@@ -104,7 +116,7 @@ const ServicesSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="reveal opacity-0 text-center mt-12" style={{ animationDelay: "0.7s" }}>
+        <div className="reveal opacity-0 text-center mt-12" style={{ animationDelay: "0.9s" }}>
           <Button variant="outline" size="lg" asChild>
             <Link to="/services">
               Voir tous les services
