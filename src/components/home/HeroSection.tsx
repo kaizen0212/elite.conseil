@@ -50,21 +50,21 @@ const HeroSection = () => {
             <div className="reveal opacity-0 inline-flex items-center space-x-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8">
               <Sparkles size={16} className="text-primary" />
               <span className="text-sm text-primary font-medium tracking-wide">
-                Accompagnement Premium
+                Spécialiste Auto-Entrepreneurs BTP
               </span>
             </div>
 
             {/* Main Heading */}
             <h1 className="reveal opacity-0 font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-tight mb-8" style={{ animationDelay: "0.2s" }}>
-              Transformez votre{" "}
-              <span className="text-gradient-gold">vision</span>
+              Créez votre{" "}
+              <span className="text-gradient-gold">auto-entreprise</span>
               <br />
-              en entreprise florissante
+              dans le BTP
             </h1>
 
             {/* Subtitle */}
             <p className="reveal opacity-0 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-12 leading-relaxed" style={{ animationDelay: "0.4s" }}>
-              Un accompagnement sur-mesure et personnalisé pour concrétiser votre projet entrepreneurial avec excellence et distinction.
+              Peinture, rénovation, électricité, plomberie, multi-services, sécurité — un accompagnement expert pour lancer votre activité sereinement.
             </p>
 
             {/* CTA Buttons */}
@@ -83,7 +83,7 @@ const HeroSection = () => {
             {/* Stats */}
             <div className="reveal opacity-0 mt-16 grid grid-cols-3 gap-6" style={{ animationDelay: "0.8s" }}>
               {[
-                { value: "150+", label: "Entrepreneurs accompagnés" },
+                { value: "150+", label: "Auto-entrepreneurs accompagnés" },
                 { value: "95%", label: "Taux de réussite" },
                 { value: "10+", label: "Années d'expertise" },
               ].map((stat, index) => (
@@ -114,7 +114,7 @@ const HeroSection = () => {
               <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
                 <img 
                   src={coachPortrait}
-                  alt="Experte en accompagnement entrepreneurial"
+                  alt="Expert en accompagnement auto-entrepreneurs BTP"
                   className="w-full h-full object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
