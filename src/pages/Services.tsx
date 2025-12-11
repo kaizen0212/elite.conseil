@@ -3,87 +3,61 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Paintbrush, Wrench, Zap, Droplets, Settings, Shield, Check } from "lucide-react";
+import { ArrowRight, FileText, Users, ClipboardCheck, Compass, Check } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const services = [
   {
-    icon: Paintbrush,
-    title: "Peinture en Bâtiment",
-    description: "Accompagnement complet pour créer votre auto-entreprise de peinture : décoration, ravalement, finitions.",
+    icon: FileText,
+    title: "Business Plan",
+    description: "Élaboration d'un business plan solide et structuré pour convaincre vos partenaires et investisseurs.",
     features: [
-      "Étude de marché locale",
-      "Business plan adapté",
-      "Formalités d'immatriculation",
-      "Conseils assurance décennale",
-      "Stratégie de prospection",
-    ],
-    price: "À partir de 800 €",
-  },
-  {
-    icon: Wrench,
-    title: "Rénovation",
-    description: "Lancez votre activité de rénovation intérieure et extérieure avec un accompagnement expert.",
-    features: [
-      "Positionnement marché",
-      "Choix du statut juridique",
-      "Gestion administrative complète",
-      "Conseils devis et facturation",
-      "Support continu",
-    ],
-    price: "À partir de 800 €",
-  },
-  {
-    icon: Zap,
-    title: "Électricité",
-    description: "Créez votre micro-entreprise d'électricien avec toutes les formalités et qualifications maîtrisées.",
-    features: [
-      "Vérification des qualifications",
-      "Accompagnement Qualifelec",
-      "Business plan électricien",
-      "Formalités spécifiques",
-      "Conseils conformité",
-    ],
-    price: "À partir de 1 000 €",
-  },
-  {
-    icon: Droplets,
-    title: "Plomberie",
-    description: "Démarrez votre activité de plombier-chauffagiste indépendant avec les bonnes bases.",
-    features: [
-      "Analyse du marché local",
-      "Statut et immatriculation",
-      "Conseils qualifications RGE",
+      "Analyse de marché approfondie",
+      "Prévisions financières détaillées",
       "Stratégie de développement",
-      "Accompagnement assurances",
+      "Document professionnel clé en main",
+      "Révisions illimitées",
     ],
-    price: "À partir de 1 000 €",
+    price: "À partir de 1 500 €",
   },
   {
-    icon: Settings,
-    title: "Multi-Services",
-    description: "Polyvalent ? Créez votre structure multi-services pour diversifier vos prestations BTP.",
+    icon: Users,
+    title: "Coaching Personnalisé",
+    description: "Un accompagnement sur-mesure pour développer votre potentiel et atteindre vos objectifs professionnels.",
     features: [
-      "Définition des prestations",
-      "Business plan polyvalent",
-      "Formalités multi-activités",
-      "Conseils tarification",
-      "Stratégie de communication",
+      "Séances individuelles",
+      "Plan d'action personnalisé",
+      "Suivi régulier des progrès",
+      "Outils et méthodes éprouvés",
+      "Support entre les séances",
     ],
-    price: "À partir de 900 €",
+    price: "À partir de 200 € / séance",
   },
   {
-    icon: Shield,
-    title: "Sécurité Privée",
-    description: "Lancez votre entreprise dans le secteur de la sécurité avec toutes les autorisations nécessaires.",
+    icon: ClipboardCheck,
+    title: "Support Administratif",
+    description: "Aide complète dans vos démarches administratives pour vous concentrer sur votre cœur de métier.",
     features: [
-      "Accompagnement CNAPS",
-      "Dossier d'autorisation",
-      "Business plan sécurité",
-      "Conseils réglementation",
-      "Stratégie commerciale",
+      "Création d'entreprise",
+      "Formalités administratives",
+      "Gestion documentaire",
+      "Conseils juridiques de base",
+      "Accompagnement continu",
     ],
-    price: "À partir de 1 200 €",
+    price: "À partir de 800 €",
+  },
+  {
+    icon: Compass,
+    title: "Mentorat Stratégique",
+    description: "Guidance experte pour prendre les meilleures décisions et accélérer la croissance de votre activité.",
+    features: [
+      "Analyse stratégique",
+      "Conseils personnalisés",
+      "Networking privilégié",
+      "Accès à notre expertise",
+      "Suivi mensuel",
+    ],
+    price: "À partir de 500 € / mois",
   },
 ];
 
@@ -111,10 +85,10 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Services | Accompagnement Auto-Entrepreneurs BTP - Peinture, Électricité, Plomberie</title>
+        <title>Services | Coaching et Accompagnement Entrepreneurial</title>
         <meta
           name="description"
-          content="Accompagnement création auto-entreprise BTP : peinture, rénovation, électricité, plomberie, multi-services, sécurité. Devis personnalisé."
+          content="Découvrez nos services de coaching, business plan, support administratif et mentorat stratégique pour entrepreneurs et professionnels du BTP."
         />
       </Helmet>
 
@@ -130,11 +104,11 @@ const Services = () => {
               </span>
               <h1 className="reveal opacity-0 font-serif text-4xl md:text-5xl lg:text-6xl font-medium mt-4 mb-6" style={{ animationDelay: "0.1s" }}>
                 Accompagnement{" "}
-                <span className="text-gradient-gold">BTP</span>
+                <span className="text-gradient-gold">sur-mesure</span>
               </h1>
               <p className="reveal opacity-0 text-muted-foreground text-lg max-w-2xl mx-auto" style={{ animationDelay: "0.2s" }}>
-                Des formules adaptées à chaque métier du bâtiment et des services techniques 
-                pour lancer votre auto-entreprise sereinement.
+                Des formules adaptées à vos besoins pour vous accompagner à chaque étape 
+                de votre parcours entrepreneurial, avec une expertise particulière dans le secteur BTP.
               </p>
             </div>
           </section>
@@ -186,16 +160,16 @@ const Services = () => {
             </div>
           </section>
 
-          {/* CTA Section */}
+          {/* BTP Section */}
           <section className="section-padding bg-card">
             <div className="container mx-auto text-center">
               <h2 className="reveal opacity-0 font-serif text-3xl md:text-4xl font-medium mb-6">
-                Votre métier n'est pas listé ?{" "}
-                <span className="text-gradient-gold">Contactez-nous</span>
+                Expertise{" "}
+                <span className="text-gradient-gold">BTP</span>
               </h2>
-              <p className="reveal opacity-0 text-muted-foreground mb-8 max-w-xl mx-auto" style={{ animationDelay: "0.2s" }}>
-                Nous accompagnons tous les métiers du BTP et des services techniques. 
-                Parlons de votre projet !
+              <p className="reveal opacity-0 text-muted-foreground mb-8 max-w-2xl mx-auto" style={{ animationDelay: "0.2s" }}>
+                Une expertise particulière dans l'accompagnement des professionnels du BTP : 
+                peinture, rénovation, électricité, plomberie, multi-services et sécurité.
               </p>
               <div className="reveal opacity-0" style={{ animationDelay: "0.3s" }}>
                 <Button variant="premium" size="xl" asChild>

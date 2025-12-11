@@ -30,13 +30,13 @@ const values = [
   },
   {
     icon: BookOpen,
-    title: "Expertise BTP",
-    description: "Plus de 10 ans d'expérience spécifique dans l'accompagnement du secteur BTP.",
+    title: "Expertise",
+    description: "Plus de 10 ans d'expérience dans l'accompagnement entrepreneurial et le BTP.",
   },
   {
     icon: TrendingUp,
     title: "Résultats",
-    description: "95% de taux de réussite pour les auto-entrepreneurs accompagnés.",
+    description: "95% de taux de réussite pour les entrepreneurs accompagnés.",
   },
 ];
 
@@ -64,10 +64,10 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>À Propos | Expert Accompagnement Auto-Entrepreneurs BTP</title>
+        <title>À Propos | Coach Expert en Accompagnement Entrepreneurial</title>
         <meta
           name="description"
-          content="Découvrez notre expertise dans l'accompagnement des auto-entrepreneurs BTP : peinture, électricité, plomberie, rénovation, multi-services, sécurité."
+          content="Découvrez notre expertise dans l'accompagnement des entrepreneurs. Coaching personnalisé, business plan et mentorat stratégique."
         />
       </Helmet>
 
@@ -94,7 +94,7 @@ const About = () => {
                     <div className="relative h-full overflow-hidden rounded-sm">
                       <img 
                         src={coachPortrait2}
-                        alt="Expert accompagnement auto-entrepreneurs BTP"
+                        alt="Coach professionnel en accompagnement"
                         className="w-full h-full object-cover object-top"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
@@ -109,20 +109,20 @@ const About = () => {
                       À Propos
                     </span>
                     <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium mt-4 leading-tight">
-                      Spécialiste du{" "}
-                      <span className="text-gradient-gold">BTP</span>
+                      L'excellence au service de{" "}
+                      <span className="text-gradient-gold">votre réussite</span>
                     </h1>
                   </div>
 
                   <p className="reveal opacity-0 text-muted-foreground leading-relaxed text-lg" style={{ animationDelay: "0.2s" }}>
-                    Passionné par l'entrepreneuriat et le secteur du bâtiment, j'ai consacré plus d'une 
-                    décennie à accompagner les professionnels du BTP dans la création de leur auto-entreprise.
+                    Passionné par l'entrepreneuriat, j'ai consacré plus d'une 
+                    décennie à accompagner les professionnels dans la création et le développement de leur activité.
                   </p>
 
                   <p className="reveal opacity-0 text-muted-foreground leading-relaxed" style={{ animationDelay: "0.3s" }}>
-                    Mon expertise couvre tous les métiers techniques : peinture, rénovation, électricité, 
-                    plomberie, multi-services et sécurité. Plus de 150 auto-entrepreneurs accompagnés 
-                    avec un taux de réussite de 95%.
+                    Mon expertise couvre le coaching personnalisé, l'élaboration de business plans, 
+                    le support administratif et le mentorat stratégique. Une expertise particulière 
+                    dans le secteur BTP : peinture, rénovation, électricité, plomberie, multi-services et sécurité.
                   </p>
 
                   <div className="reveal opacity-0" style={{ animationDelay: "0.4s" }}>
@@ -180,8 +180,8 @@ const About = () => {
           <section className="section-padding bg-card">
             <div className="container mx-auto text-center">
               <h2 className="reveal opacity-0 font-serif text-3xl md:text-4xl font-medium mb-6">
-                Prêt à lancer votre{" "}
-                <span className="text-gradient-gold">activité BTP</span> ?
+                Prêt à transformer votre{" "}
+                <span className="text-gradient-gold">vision en succès</span> ?
               </h2>
               <p className="reveal opacity-0 text-muted-foreground mb-8 max-w-xl mx-auto" style={{ animationDelay: "0.2s" }}>
                 Réservez votre consultation découverte gratuite et commençons ensemble.

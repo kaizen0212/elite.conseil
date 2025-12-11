@@ -35,9 +35,9 @@ const AboutPreview = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-sm" />
               <div className="absolute inset-4 border border-primary/30 rounded-sm" />
               <div className="absolute inset-8 rounded-sm overflow-hidden">
-                <img 
+              <img 
                   src={coachOffice}
-                  alt="Expert accompagnement auto-entrepreneurs BTP"
+                  alt="Coach professionnel en accompagnement"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -58,15 +58,15 @@ const AboutPreview = () => {
                 À propos
               </span>
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium mt-4 leading-tight">
-                Spécialiste du{" "}
-                <span className="text-gradient-gold">BTP</span>
+                L'excellence au service de{" "}
+                <span className="text-gradient-gold">votre réussite</span>
               </h2>
             </div>
 
             <p className="reveal opacity-0 text-muted-foreground leading-relaxed" style={{ animationDelay: "0.3s" }}>
-              Fort de plus de 10 années d'expertise dans l'accompagnement des auto-entrepreneurs 
-              du secteur BTP et services techniques, je vous guide dans la création et le développement 
-              de votre activité : peinture, rénovation, électricité, plomberie, multi-services et sécurité.
+              Fort de plus de 10 années d'expertise dans l'accompagnement entrepreneurial, 
+              je vous guide dans la création et le développement de votre activité. 
+              Spécialiste du BTP et services techniques, j'accompagne également tous types d'entrepreneurs.
             </p>
 
             {/* Values */}

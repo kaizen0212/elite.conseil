@@ -1,44 +1,32 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Paintbrush, Wrench, Zap, Droplets, Settings, Shield } from "lucide-react";
+import { ArrowRight, FileText, Users, ClipboardCheck, Compass } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 const services = [
   {
-    icon: Paintbrush,
-    title: "Peinture",
+    icon: FileText,
+    title: "Business Plan",
     description:
-      "Accompagnement complet pour créer votre auto-entreprise de peinture en bâtiment.",
+      "Élaboration d'un business plan solide et structuré pour convaincre vos partenaires et investisseurs.",
   },
   {
-    icon: Wrench,
-    title: "Rénovation",
+    icon: Users,
+    title: "Coaching Personnalisé",
     description:
-      "Lancez votre activité de rénovation intérieure et extérieure avec un cadre solide.",
+      "Un accompagnement sur-mesure pour développer votre potentiel et atteindre vos objectifs professionnels.",
   },
   {
-    icon: Zap,
-    title: "Électricité",
+    icon: ClipboardCheck,
+    title: "Support Administratif",
     description:
-      "Créez votre micro-entreprise d'électricien avec toutes les formalités maîtrisées.",
+      "Aide complète dans vos démarches administratives pour vous concentrer sur votre cœur de métier.",
   },
   {
-    icon: Droplets,
-    title: "Plomberie",
+    icon: Compass,
+    title: "Mentorat Stratégique",
     description:
-      "Démarrez votre activité de plombier indépendant avec un accompagnement expert.",
-  },
-  {
-    icon: Settings,
-    title: "Multi-Services",
-    description:
-      "Polyvalent ? Créez votre structure multi-services pour diversifier vos prestations.",
-  },
-  {
-    icon: Shield,
-    title: "Sécurité",
-    description:
-      "Lancez votre entreprise dans le secteur de la sécurité privée avec les bonnes bases.",
+      "Guidance experte pour prendre les meilleures décisions et accélérer la croissance de votre activité.",
   },
 ];
 
@@ -69,19 +57,19 @@ const ServicesSection = () => {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <span className="reveal opacity-0 text-primary text-sm font-medium tracking-widest uppercase">
-            Secteurs d'activité
+            Services
           </span>
           <h2 className="reveal opacity-0 font-serif text-3xl md:text-4xl lg:text-5xl font-medium mt-4" style={{ animationDelay: "0.1s" }}>
-            BTP &{" "}
-            <span className="text-gradient-gold">Services Techniques</span>
+            Un accompagnement{" "}
+            <span className="text-gradient-gold">complet</span>
           </h2>
           <p className="reveal opacity-0 text-muted-foreground mt-6" style={{ animationDelay: "0.2s" }}>
-            Un accompagnement sur-mesure pour chaque métier du bâtiment et des services techniques.
+            Des services adaptés à tous les entrepreneurs, avec une expertise particulière dans le secteur BTP et services techniques.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <div
               key={index}
@@ -116,7 +104,7 @@ const ServicesSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="reveal opacity-0 text-center mt-12" style={{ animationDelay: "0.9s" }}>
+        <div className="reveal opacity-0 text-center mt-12" style={{ animationDelay: "0.7s" }}>
           <Button variant="outline" size="lg" asChild>
             <Link to="/services">
               Voir tous les services
